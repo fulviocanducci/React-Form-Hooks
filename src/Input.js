@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({ fn, name, type, label }) {
+function Input({ fn, name, type, label, errors }) {
   return (
     <div className="mb-3">
       <label htmlFor={name} className="form-label">
@@ -11,8 +11,11 @@ function Input({ fn, name, type, label }) {
         name={name}
         id={name}
         className="form-control"
-        ref={fn()}
+        ref={fn}
       />
+      {errors && errors[name] && (
+        <p className="error">{errors[name].message}</p>
+      )}
     </div>
   );
 }
