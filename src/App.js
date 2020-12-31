@@ -8,7 +8,7 @@ export default function App() {
     console.log("Data submitted: ", data);
   }
   return (
-    <div className="content">
+    <div className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input fn={register} label="E-mail:" name={"email"} />
         <Input
