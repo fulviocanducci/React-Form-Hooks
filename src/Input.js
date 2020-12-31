@@ -14,7 +14,7 @@ function Input({ fn, name, type, label, errors }) {
         ref={fn}
       />
       {errors && errors[name] && (
-        <p className="error">{errors[name].message}</p>
+        <p className="error mt-2">{errors[name].message}</p>
       )}
     </div>
   );

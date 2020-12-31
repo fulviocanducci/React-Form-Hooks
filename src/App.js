@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import Input from "./Input";
 
 export default function App() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
   function onSubmit(data) {
-    console.log("Data submitted: ", data);
+    console.log(data);
   }
   return (
     <div className="container mt-5">
@@ -31,7 +33,9 @@ export default function App() {
           type="password"
           errors={errors}
         />
-        <button className="btn btn-primary">Send</button>
+        <button className="btn btn-primary" disabled={!formState.isValid}>
+          Send
+        </button>
       </form>
     </div>
   );
